@@ -1,17 +1,23 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.ArrayList;
-import java.util.EmptyStackException;
-import java.time.*;
 
-// Eric Hoffman
-// My Project that integrates my skills I've learned and 
-//asks for a lot of numbers
+/**
+ * My Project that integrates my skills I've learned.
+ * Asks for a lot of numbers from the user.
+ * Also includes some of my interests like sports, cars, and technology
+ * @author Eric Hoffman
+ *
+ */
 public class Main {
+  
   //Lambda Expression interface
-  interface Greetings{
+  interface Greetings {
     void sayMessage(String message);
   }
 
@@ -22,6 +28,12 @@ public class Main {
   //divisionCalc is method name
   //Parameter list is in parenthesis
   //Method signature is the method's name and parameter types
+  /**
+   * Public method to do division of two doubles.
+   * @param number1 double value assigned to number1 for division
+   * @param number2 double value assigned to number2 for division
+   * @return the division value of the two doubles
+   */
   public static double divisionCalc(double number1, double number2) {
     //method body
     double division;
@@ -30,14 +42,23 @@ public class Main {
 
   }
 
-  // multiplication method
+  /**
+   * Public method to multiply two doubles.
+   * @param number1 double value used as the first number in the multiplication
+   * @param number2 double value used as the divisor in the multiplication
+   * @return
+   */
   public static double multiplicationCalc(double number1, double number2) {
     double multiplication;
     multiplication = number1 * number2;
     return multiplication;
   }
 
-  // method to get max value in an array
+  /**
+   * Public method that gets the max value of an array.
+   * @param inputArray is the array used in the loop that will be declared in main
+   * @return max value of the array
+   */
   public static int getMax(int[] inputArray) {
     //method body
     int maxValue = inputArray[0];
@@ -49,7 +70,11 @@ public class Main {
     return maxValue;
   }
 
-  // method to get minimum value of an array
+  /**
+   * Public method to get the minimum value in an array.
+   * @param inputArray is the array used in the loop that will be declared in main
+   * @return minimum value in an array
+   */
   public static int getMin(int[] inputArray) {
     //method body
     int minValue = inputArray[0];
@@ -61,8 +86,9 @@ public class Main {
     return minValue;
   }
   //method from tutorials point for showpush
+  
   static void showpush(Stack<Integer> stacker, int s) {
-    stacker.push(new Integer(s));
+    stacker.push(s);
     System.out.println("push(" + s + ")");
     System.out.println("stack: " + stacker);
   }
@@ -76,6 +102,10 @@ public class Main {
   }
 
   // static difinition: Belonging to the class, not belonging to the object.
+  /**
+   * Main method that executes all code and returns all the elements to the user.
+   * @param args A string array containing command line arguments
+   */
   public static void main(String[] args) {
     // calling date and showing user
     LocalDate currentDate = LocalDate.now();
@@ -92,7 +122,7 @@ public class Main {
     
     //Lambda Expression
     Greetings greetService = message ->
-    System.out.println("Hello " + message);
+        System.out.println("Hello " + message);
     greetService.sayMessage("Professor");
     // sysout ctrl+space
 
@@ -156,30 +186,30 @@ public class Main {
     System.out.println("The string value of the double d is " + s2);
 
     // String method to return the index of a letter
-    String str1 = new String("I don't have a theme for this project");
+    String str1 = "I don't have a theme for this project";
     System.out.println("Index of t in str1: " + str1.indexOf('t'));
 
     // Calculating the price of a meal including the tax and tip
     // Use try catch to make sure correct type is entered
-    double meal_cost = 0;
-    double tip_percent = 0;
-    double tax_percent = 0;
+    double mealCost = 0;
+    double tipPercent = 0;
+    double taxPercent = 0;
     boolean inputGood = false;
     while (inputGood == false) {
       System.out.println("Enter your meal cost, percent tip, and tax percent.");
       try {
-        meal_cost = scan.nextDouble();
-        tip_percent = scan.nextDouble();
-        tax_percent = scan.nextDouble();
+        mealCost = scan.nextDouble();
+        tipPercent = scan.nextDouble();
+        taxPercent = scan.nextDouble();
         inputGood = true;
       } catch (InputMismatchException ex) {
         System.out.println("All numbers must be a double");
         scan.nextLine();
       }
     }
-    double tipCost = ((meal_cost * tip_percent) / 100);
-    double tax = ((meal_cost * tax_percent) / 100);
-    double totalCost = (meal_cost + tipCost + tax);
+    double tipCost = ((mealCost * tipPercent) / 100);
+    double tax = ((mealCost * taxPercent) / 100);
+    double totalCost = (mealCost + tipCost + tax);
     int totalRoundedCost = (int) Math.round(totalCost);
     System.out.println("The total meal cost is " + totalRoundedCost + " dollars.");
 
@@ -189,44 +219,44 @@ public class Main {
     String monthString;
     switch (month) {
 
-    case 1:
-      monthString = "January";
-      break;
-    case 2:
-      monthString = "February";
-      break;
-    case 3:
-      monthString = "March";
-      break;
-    case 4:
-      monthString = "April";
-      break;
-    case 5:
-      monthString = "May";
-      break;
-    case 6:
-      monthString = "June";
-      break;
-    case 7:
-      monthString = "July";
-      break;
-    case 8:
-      monthString = "August";
-      break;
-    case 9:
-      monthString = "September";
-      break;
-    case 10:
-      monthString = "October";
-      break;
-    case 11:
-      monthString = "November";
-      break;
-    case 12:
-      monthString = "December";
-      break;
-    default:
-      monthString = "Invalid month";
+      case 1:
+        monthString = "January";
+        break;
+      case 2:
+        monthString = "February";
+        break;
+      case 3:
+        monthString = "March";
+        break;
+      case 4:
+        monthString = "April";
+        break;
+      case 5:
+        monthString = "May";
+        break;
+      case 6:
+        monthString = "June";
+        break;
+      case 7:
+        monthString = "July";
+        break;
+      case 8:
+        monthString = "August";
+        break;
+      case 9:
+        monthString = "September";
+        break;
+      case 10:
+        monthString = "October";
+        break;
+      case 11:
+        monthString = "November";
+        break;
+      case 12:
+        monthString = "December";
+        break;
+      default:
+        monthString = "Invalid month";
 
     }
     System.out.println(monthString);
@@ -250,14 +280,10 @@ public class Main {
     int result = rand.nextInt(2);
 
     if (result == 0) {
-      System.out.println("It landed on heads");
-    }
-
-    else if (result == 1) {
-      System.out.println("It landed on tails");
-    }
-
-    else if (result == 3) {
+      System.out.println("It landed on heads"); 
+    } else if (result == 1) {
+      System.out.println("It landed on tails"); 
+    } else if (result == 3) {
       System.out.println("It landed on the side. fix your random number generator");
 
     }
@@ -288,11 +314,10 @@ public class Main {
 
         System.out.println();
         System.out.println("Counting complete.");
-        System.out.println("There are " + counter + " numbers (inclusive) between " + (initialValue - counter + 1)
-            + " and " + finalValue + ".");
-      }
-
-      else {
+        System.out.println("There are " + counter + " numbers (inclusive) between " 
+            + (initialValue - counter + 1)
+            + " and " + finalValue + "."); 
+      } else {
         System.out.println("Final value is less than initial value!");
         System.out.println("Please choose new values.");
       }
@@ -308,7 +333,7 @@ public class Main {
       }
       // New array to show max, min, sum,
       // and index of each number
-      int arr[] = new int[] { 2, 5, 13, 20, 100, 219 };
+      int[] arr = new int[] { 2, 5, 13, 20, 100, 219 };
       //for loop using .length to loop through array
       for (int i = 0; i < arr.length; i++) {
         System.out.println(arr[i]);
@@ -404,9 +429,9 @@ public class Main {
       //seems to be from base type
       
       //Used model from Module 10 to show polymorphism
-      Apple Iphone = new Apple();
-      Samsung Galaxy = new Samsung();
-      Phone[] myPhones = { Iphone, Galaxy };
+      Samsung galaxy = new Samsung();
+      Apple iphone = new Apple();
+      Phone[] myPhones = { iphone, galaxy };
       for (Phone anPhone : myPhones) {
         anPhone.showBrand();
         anPhone.showColor();
@@ -464,7 +489,7 @@ public class Main {
       
       //stack using tutorials point layout
       Stack<Integer> stacker = new Stack<Integer>();
-      System.out.println("stack: "+ stacker);
+      System.out.println("stack: " + stacker);
       showpush(stacker, 13);
       showpush(stacker, 23);
       showpush(stacker, 5);

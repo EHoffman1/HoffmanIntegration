@@ -1,5 +1,9 @@
-//Eric Hoffman
-//Class Phone used for polymorphism
+/**
+ * The phone class is a parent class that returns the and color of the phone.
+ * @author Eric Hoffman
+ *
+ */
+
 //Polymorphism is where a subclass defines their own unique
 //behaviors and uses some of the parent class
 public class Phone {

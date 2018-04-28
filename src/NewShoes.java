@@ -1,5 +1,10 @@
-//Eric Hoffman
-//Implement the shoes interface
+/**
+ * Newshoes implents the interface of Shoes.
+ * @author Eric Hoffman
+ *
+ */
+
+//NewShoes implements the interface Shoes
 public class NewShoes implements Shoes {
   
   public void color() {

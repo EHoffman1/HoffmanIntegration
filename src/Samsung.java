@@ -1,8 +1,12 @@
-//Eric Hoffman
-//Samsung class that inherits Phone
+/**
+ * The class samsung inherits properties of phone and returns color and brand.
+ * @author Eric Hoffman
+ *
+ */
+
 public class Samsung extends Phone {
 
-//Overriding base method to show the brand is Samsung
+  //Overriding base method to show the brand is Samsung
   public void showBrand() {
     System.out.println("Samsung running Android");
   }
