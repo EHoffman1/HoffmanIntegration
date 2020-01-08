@@ -21,13 +21,6 @@ public class Main {
     void sayMessage(String message);
   }
 
-  // division method
-  //A method is a group of statements that have a name
-  //modifier is public
-  //double is return type
-  //divisionCalc is method name
-  //Parameter list is in parenthesis
-  //Method signature is the method's name and parameter types
   /**
    * Public method to do division of two doubles.
    * @param number1 double value assigned to number1 for division
@@ -94,6 +87,7 @@ public class Main {
   }
   
   //method from tutorials point for showpop
+  
   static void showpop(Stack<Integer> stacker) {
     System.out.println("pop -> ");
     Integer a = (Integer) stacker.pop();
